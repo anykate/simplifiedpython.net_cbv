@@ -1,0 +1,25 @@
+{% extends 'genericviews/base.html' %}
+
+{% block title %}
+CBV App | Index Page
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Product List</h1>
+    <hr>
+    {% if product_list %}
+    <ul>
+        {% for product in product_list %}
+            <li><a href="{% url 'genericviews:details' product_id=product.id %}">{{ product.title }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <h3> No product found.</h3>
+    <hr>
+    {% endif %}
+    <br><br><br>
+    <hr>
+    <a href="{% url 'genericviews:save' %}" class="btn btn-primary">Add Product</a>
+</div>
+{% endblock %}

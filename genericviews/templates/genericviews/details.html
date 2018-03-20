@@ -1,0 +1,15 @@
+{% extends 'genericviews/base.html' %}
+
+{% block title %}
+CBV App | Product Details
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Product Details</h1>
+    <hr>
+    <h1>{{ product.title }}</h1>
+    <h3>{{ product.description }}</h3>
+    <hr>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'genericviews/base.html' %}
+
+{% block title %}
+CBV App | Save Product
+{% endblock %}
+
+{% block content %}
+<h1>Add/Save Product:</h1>
+<form action="{% url 'genericviews:save' %}" method="POST">
+    {% csrf_token %}
+    <div class="container">
+        {{ form }}
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </div>
+</form>
+{% endblock %}
